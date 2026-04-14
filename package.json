@@ -52,7 +52,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "mtg-stream-tool",
+            "name": "bbst",
             "title": "Beyblade Stream Tool",
             "productName": "Beyblade Stream Tool",
             "setupIcon": "./app/logo.ico",
