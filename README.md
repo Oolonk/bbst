@@ -1,5 +1,5 @@
 # Beyblade Stream Tool
-This is a stream Tool for Magic: The Gathering based of [piio](https://github.com/Oolonk/piio-ssbm)
+This is a stream Tool for Beyblade based of [piio](https://github.com/Oolonk/piio-ssbm)
 
 ## Social Media 
 
