@@ -347,7 +347,9 @@ function buildTeamPlayerList() {
             playerNameElm.oninput = playerNameInput;
             deckNameElm.forEach((elm, inx) => {
                 elm.id = 'deckname-' + i + '-' + inx;
-                deckNameElm.value = scoreboard.players[i].deck && scoreboard.players[i].deck.decklist[inx] ? scoreboard.players[i].deck.decklist[inx] : "";
+                console.log(scoreboard.players[i].deck.decklist[inx]);
+                elm.value = scoreboard.players[i].deck && scoreboard.players[i].deck.decklist[inx] ? scoreboard.players[i].deck.decklist[inx] : "";
+
                 elm.dataset.id = inx;
                 elm.oninput = deckNameInput;
             });
