@@ -197,7 +197,6 @@ async function applyParryggSet(setId) {
     fire("scoreboardparryggchanged");
     fire("scoreboardteamschanged");
     fire("scoreboardchanged");
-    resetLife();
     resetScore();
 
     bgWork.finish("applyParryggSet");

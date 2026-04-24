@@ -95,7 +95,6 @@ async function applySmashggSet(setId) {
 	fire("scoreboardsmashggchanged");
 	fire("scoreboardteamschanged");
 	fire("scoreboardchanged");
-	resetLife();
 	resetScore();
 
 	bgWork.finish("applySmashggSet");

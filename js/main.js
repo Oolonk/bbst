@@ -83,11 +83,14 @@ async function changePlayerAmount() {
     maxAmountPlayers = themeMaxAmount;
     document.getElementById('playersize-select').min = themeMinAmount;
     document.getElementById('playersize-select').max = themeMaxAmount;
-        if (scoreboard.players.length < themeMinAmount) {
-            setPlayerSize(themeMinAmount);
-        } else if (scoreboard.players.length > themeMaxAmount) {
-            setPlayerSize(themeMaxAmount);
-        }
+    if (scoreboard.players.length < themeMinAmount) {
+        setPlayerSize(themeMinAmount);
+    } else if (scoreboard.players.length > themeMaxAmount) {
+        setPlayerSize(themeMaxAmount);
+    }
+    for(var i = 0; i < scoreboard.players.length; i++) {
+        insertPlayerUI(i);
+    }
 }
 async function init() {
     hold("scoreboardchanged");
@@ -895,8 +898,8 @@ function insertScoreboardData(newScoreboard) {
     }
 
     // Fix player object Instances
-    for (let teamNum in scoreboard.teams) {
-        scoreboard.teams[teamNum].players = scoreboard.teams[teamNum].players.map((po) => (po instanceof Player ? po : new Player(po)));
+    for (let teamNum in scoreboard.players) {
+        scoreboard.players[teamNum].player = scoreboard.players[teamNum].player instanceof Player ? scoreboard.players[teamNum].player : new Player(scoreboard.players[teamNum].player);
     }
 
     // Fix caster object instances
