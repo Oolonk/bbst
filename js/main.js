@@ -1,6 +1,5 @@
 const {shell, ipcMain} = require('electron');
 const fs = require('fs');
-const path = require("path");
 const emitter = new (require("events"))();
 
 const APPROOT = remote.getGlobal("APPROOT").replace(/\\/g, '/');
@@ -1397,7 +1396,7 @@ async function openStreamQueueOptions(){
             break;
         case "parrygg":
             applyParryggSettings(windowSettings.tournamentSlug, windowSettings.streamId);
-            ipcRenderer.invoke('set', 'parrygg', { "tournament": parrygg.selectedTournament, "stream": parrygg.selectedStream });
+            ipcRenderer.invoke('set', 'parrygg', { "tournament": parrygg.selectedTournament, "stream": windowSettings.streamId });
             ipcRenderer.invoke('set', 'smashgg', { "tournament": "", "stream": null });
             break;
     }
